@@ -1,0 +1,10 @@
+{
+	"name": "React Boilerplate",
+	"description": "Quick and easy React boilerplate",
+	"short_name": "RB",
+	"start_url": ".",
+	"theme_color": "#fff",
+	"background_color": "#fff",
+	"orientation": "portrait",
+	"display": "standalone"
+}
