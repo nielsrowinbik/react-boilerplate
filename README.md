@@ -1,12 +1,12 @@
 # React Boilerplate
 
-## Features
+### Features
 
 - Automatic code splitting for routes
-- Auto-generated [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) for offline caching powered by [offline-plugin](/nekr/offline-plugin)
-- [Styled Components](/styled-components/styled-components)
+- Auto-generated [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) for offline caching powered by [offline-plugin](https://github.com/nekr/offline-plugin)
+- [Styled Components](https://github.com/styled-components/styled-components)
 
-## Installation
+### Installation
 
 ```sh
 $ git clone https://github.com/nielsrowinbik/react-boilerplate my-app
@@ -15,7 +15,7 @@ $ rm -rf .git && git init && npm init
 $ yarn
 ```
 
-## Development
+### Development
 
 Start a live-reloading development server with:
 
@@ -23,7 +23,7 @@ Start a live-reloading development server with:
 $ yarn dev
 ```
 
-## Testing
+### Testing
 
 Check your code by running ESLint:
 
@@ -31,7 +31,7 @@ Check your code by running ESLint:
 $ yarn lint
 ```
 
-## Building and deploying
+### Building and deploying
 
 Generate a production build in the `./build` folder by running:
 
@@ -39,6 +39,6 @@ Generate a production build in the `./build` folder by running:
 $ yarn build
 ```
 
-## License
+### License
 
 This project is licensed under the [MIT license](LICENSE).
