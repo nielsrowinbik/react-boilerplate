@@ -1,14 +1,25 @@
-import Container from 'components/Container';
-import Main from 'components/Main';
-import { observer } from 'mobx-react';
+import Helmet from 'react-helmet';
 import React from 'react';
+import Route from 'components/Route';
+import { Switch } from 'react-router-dom';
 
-const Home = observer(({ OrganisationsStore, SnackbarStore }) => (
-	<Main>
-		<Container>
-			<h1>Home</h1>
-		</Container>
-	</Main>
-));
+const Head = () => (
+	<Helmet
+		titleTemplate="%s — openSEA"
+		defaultTitle="openSEA"
+	/>
+);
 
-export default Home;
+const MainRoutes = (props) => (
+	<div id="app">
+		<Head />
+		<Switch>
+			<Route path="/" exact />
+			<Route path="/private" exact authedOnly />
+			<Route path="/signin" exact unauthedOnly />
+			<Route path="/logout" exact />
+		</Switch>
+	</div>
+);
+
+export default MainRoutes;

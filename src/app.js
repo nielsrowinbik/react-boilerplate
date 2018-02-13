@@ -1,21 +1,50 @@
 import * as stores from './stores';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Provider, observer } from 'mobx-react';
-import Header from 'components/Header';
-import Home from 'routes';
+import { injectGlobal, ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
+import { createStore } from 'mobx-app';
+import MainApp from 'routes';
+import { Provider } from 'mobx-react';
 import React from 'react';
+import theme from './theme';
+
+const { state, actions } = createStore(stores);
 
 const App = () => (
-	<Provider {...stores}>
-		<BrowserRouter>
-			<div id="app">
-				<Header />
-				<Switch>
-					<Route path="/" exact component={Home} />
-				</Switch>
-			</div>
-		</BrowserRouter>
+	<Provider actions={actions} state={state}>
+		<ThemeProvider theme={theme}>
+			<BrowserRouter>
+				<MainApp />
+			</BrowserRouter>
+		</ThemeProvider>
 	</Provider>
 );
 
-export default observer(App);
+injectGlobal`
+	html, body {
+		color: ${theme.text.primary};
+	}
+	#app {
+		display: flex;
+		min-width: 1024px;
+		min-height: 100vh;
+		main {
+			flex: auto;
+		}
+	}
+	a {
+		color: #0052CC;
+		text-decoration: none;
+		font-size: 0.875rem;
+		
+		:hover {
+			cursor: pointer;
+			color: #0065FF;
+			text-decoration: underline;
+		}
+	}
+	p {
+		font-size: 0.875rem;
+	}
+`;
+
+export default App;

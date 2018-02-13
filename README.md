@@ -3,7 +3,7 @@
 ### Features
 
 - Automatic code splitting for routes
-- Auto-generated [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) for offline caching powered by [offline-plugin](https://github.com/nekr/offline-plugin)
+- Auto-generated [Service Workers](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) for offline caching powered by [Workbox](https://developers.google.com/web/tools/workbox/)
 - [Styled Components](https://github.com/styled-components/styled-components)
 
 ### Installation
